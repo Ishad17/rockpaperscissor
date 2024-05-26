@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h2> Rock Paper Scissor</h2>
+
+    <script>
+
+        function getComputerChoice(){
+            const input = ['ROCK', 'PAPER' , 'SCISSOR']
+            const randomIndex = Math.floor(Math.random() * 3);
+            const randomString = input[randomIndex];
+            console.log(randomString);
+
+        }
+         getComputerChoice();
+
+        function getHumanChoice(){
+            let playerInput = prompt("Enter Rock, Paper or Scissor")
+            playerInput = playerInput.toUpperCase()
+
+            console.log(playerInput)   
+        }
+
+        getHumanChoice();
+
+
+        let humanScore = 0;
+        let computerScore = 0;
+
+        function playRound(humanChoice,computerChoice){
+                
+        }
+    
+    </script>
+
+</body>
+</html>
