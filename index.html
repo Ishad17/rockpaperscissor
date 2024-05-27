@@ -8,34 +8,65 @@
 </head>
 <body>
     <h2> Rock Paper Scissor</h2>
-
     <script>
-
         function getComputerChoice(){
-            const input = ['ROCK', 'PAPER' , 'SCISSOR']
+            const input = ['ROCK', 'PAPER','SCISSOR']
+            // console.log(typeof input)
             const randomIndex = Math.floor(Math.random() * 3);
             const randomString = input[randomIndex];
-            console.log(randomString);
-
+            console.log(randomString)
+            return randomString;
+            // console.log(randomString + 'get computer function');
+            // console.log(typeof randomString)
         }
-         getComputerChoice();
 
+        // getComputerChoice();
+
+
+        // console.log("22 Ishad")
         function getHumanChoice(){
             let playerInput = prompt("Enter Rock, Paper or Scissor")
-            playerInput = playerInput.toUpperCase()
-
+            playerInput = playerInput.toUpperCase().toString();
             console.log(playerInput)   
-        }
+            console.log(typeof playerInput)
+            
+            if(playerInput != 'ROCK' && playerInput != 'PAPER' && playerInput != 'SCISSOR'){
+                console.log("Wrong Input")
+               
+            }else{
+            return playerInput;
+            }
+            
+         } 
 
-        getHumanChoice();
-
+        //  getHumanChoice();
+        // console.log("30 Ishad")
+        // console.log("33 Ishad")
 
         let humanScore = 0;
         let computerScore = 0;
 
-        function playRound(humanChoice,computerChoice){
-                
+        // console.log("39 Ishad")
+        // console.log(computerChoice);
+        // console.log("45 Ishad")
+
+        function playRound(getHumanChoice,getComputerChoice){
+       
+            if(getHumanChoice == getComputerChoice){
+                console.log('Points for Human');
+            }else if (getComputerChoice !== getHumanChoice){
+             console.log('Points for computer');
+            }
+        //  getHumanChoice === getComputerChoice ? console.log('Points for Human') : console.log('Points for computer')         
+       
         }
+        
+        const computerSelection = getComputerChoice();
+        const humanSelection = getHumanChoice();
+ 
+        // console.log("Ishad")
+
+        playRound(humanSelection,computerSelection);
     
     </script>
 
