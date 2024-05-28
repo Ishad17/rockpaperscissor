@@ -11,15 +11,39 @@
         }
 
         h2{color: antiquewhite;}
-    </style>
+
+        #computer{
+            background-color: rgb(190, 108, 108);
+            padding: 5px;
+            margin: 2px;
+        }
+        #human{            
+            padding: 5px;
+            margin: 2px;
+            background-color: rgb(96, 177, 93);
+        }
+
+        #score,
+        #result{
+            background-color: antiquewhite;
+            padding: 5px;
+            margin: 2px;
+        }
+
+    </style>    
     
 </head>
 <body>
     <h2> Rock Paper Scissor</h2>
+    
+    <div id="human"></div>
+    <div id="computer"></div>
+    
+    <div id="result"></div>
+
+
     <script>
         
-
-
         // function getHumanChoice(){
         //     let playerInput = prompt("Enter Rock, Paper or Scissor")
         //     playerInput = playerInput.toUpperCase().toString();
@@ -48,7 +72,6 @@
 
         // }    
 
-
         let humanScore = 0;
         let computerScore = 0;
 
@@ -67,84 +90,117 @@
                 
         // }
 
-
-
         
         function playRound(){
 
-                function getHumanChoice(){
-                    let playerInput = prompt("Enter Rock, Paper or Scissor")
-                    playerInput = playerInput.toUpperCase().toString();
-                    console.log(playerInput)   
+                    function getHumanChoice(){
+                        let playerInput = prompt("Enter Rock, Paper or Scissor")
+                        playerInput = playerInput.toUpperCase().toString();
+                        console.log(playerInput)   
 
-                    if(playerInput != 'ROCK' && playerInput != 'PAPER' && playerInput != 'SCISSOR'){
-                        console.log("Wrong Input")
-                        playRound();
-                    }else{
-                        return playerInput;
-                    }
-                } 
-
-
-                function getComputerChoice(){
-                    const input = ['ROCK', 'PAPER','SCISSOR']
-                    const randomIndex = Math.floor(Math.random() * 3);
-                    const randomString = input[randomIndex];
-                    console.log(randomString)
-                    return randomString;
-                }    
+                        if(playerInput != 'ROCK' && playerInput != 'PAPER' && playerInput != 'SCISSOR'){
+                            console.log("Wrong Input")
+                            playRound();
+                        }else{
+                            return playerInput;
+                        }
+                    } 
 
 
-        let computerSelection = getComputerChoice();
-        const humanSelection = getHumanChoice();
+                    function getComputerChoice(){
+                        const input = ['ROCK', 'PAPER','SCISSOR']
+                        const randomIndex = Math.floor(Math.random() * 3);
+                        const randomString = input[randomIndex];
+                        console.log(randomString)
+                        return randomString;
+                    }    
 
 
-            if (humanSelection === computerSelection){
-                console.log("It's a tie")
-                console.log("Your: ", humanScore)
-                console.log("Computer: " + computerScore);
+            let computerSelection = getComputerChoice();
+            const humanSelection = getHumanChoice();
 
-            } else if((humanSelection === 'ROCK' && computerSelection === 'SCISSOR') ||
-                    (humanSelection === 'PAPER' && computerSelection === 'ROCK') ||
-                    (humanSelection === 'SCISSOR' && computerSelection === 'PAPER'))
-            {
-                humanScore++   
-                console.log("You get the point")
-                console.log("You:", humanScore)
-                console.log("Computer:", computerScore)
+            // let scoreElement = document.getElementById("score");
 
-            }else if((humanSelection === 'SCISSOR' && computerSelection === 'ROCK') ||
-                    (humanSelection === 'ROCK' && computerSelection === 'PAPER') ||
-                    (humanSelection === 'PAPER' && computerSelection === 'SCISSOR'))
-            {
-                computerScore++
-                console.log("Computer gets the point")
-                console.log("Computer:", computerScore)
-                console.log("You:", humanScore)        
-            }
+
+                if (humanSelection === computerSelection){
+                    console.log("It's a tie")
+                    console.log("Your: ", humanScore)
+                    console.log("Computer: ", computerScore);
+                    // scoreElement.textContent = "No point!";
+
+
+                } else if((humanSelection === 'ROCK' && computerSelection === 'SCISSOR') ||
+                        (humanSelection === 'PAPER' && computerSelection === 'ROCK') ||
+                        (humanSelection === 'SCISSOR' && computerSelection === 'PAPER'))
+                {
+                    humanScore++   
+                    console.log("You get the point")
+                    console.log("You:", humanScore)
+                    console.log("Computer:", computerScore)
+                    // return scoreElement.textContent = "You get the point!";
+                    
+
+
+                }else if((humanSelection === 'SCISSOR' && computerSelection === 'ROCK') ||
+                        (humanSelection === 'ROCK' && computerSelection === 'PAPER') ||
+                        (humanSelection === 'PAPER' && computerSelection === 'SCISSOR'))
+                {
+                    computerScore++
+                    console.log("Computer gets the point")
+                    console.log("Computer:", computerScore)
+                    console.log("You:", humanScore)        
+                    // scoreElement.textContent = "Computer gets the point!";
+
+                }
+
+
+        
 
         }
 
+
+
+
+
+
         function playGame(){
                 playRound();
+                console.log('Round 1')      
                 playRound();
-                playRound();
-                playRound();
-                playRound();
-                playRound();
-                playRound();
-                playRound();
-                playRound();
-                playRound();
+                console.log('Round 2')      
+                // playRound();
+                // console.log('Round 3')      
+                // playRound();
+                // console.log('Round 4')                
+                // playRound();
+                // console.log('Round 5')      
+                
+                
+                let resultElement = document.getElementById("result");
+                let humanScoreElement = document.getElementById("human")
+                let computerScoreElement = document.getElementById("computer")
 
 
                 if(humanScore > computerScore){
-                    console.log("You win!")
-                }else if(humanScore < computerScore){
-                    console.log("You lost")
+                        humanScoreElement.textContent = "Your score: " + humanScore;
+                        computerScoreElement.textContent = "Computer score: " + computerScore;
+                        console.log("You win!")
+                       
+                        resultElement.textContent = "You win!";
+                    }else if(humanScore < computerScore){
+                        humanScoreElement.textContent = "Your score: " + humanScore;
+                        computerScoreElement.textContent = "Computer score: " + computerScore;                        
+                        console.log("You lost")
+                        resultElement.textContent = "You lost!";
+
                 }else{
-                    console.log("Draw!")
+                        humanScoreElement.textContent = "Your score: " + humanScore;
+                        computerScoreElement.textContent = "Computer score: " + computerScore;
+                        console.log("Draw!")
+                        resultElement.textContent = "Draw!";
+
                 }
+
 
         }
 
