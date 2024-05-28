@@ -4,69 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        body{
+            background-color:rgb(10, 44, 25) ;
+        }
+
+        h2{color: antiquewhite;}
+    </style>
     
 </head>
 <body>
     <h2> Rock Paper Scissor</h2>
     <script>
-        function getComputerChoice(){
-            const input = ['ROCK', 'PAPER','SCISSOR']
-            // console.log(typeof input)
-            const randomIndex = Math.floor(Math.random() * 3);
-            const randomString = input[randomIndex];
-            console.log(randomString)
-            return randomString;
-            // console.log(randomString + 'get computer function');
-            // console.log(typeof randomString)
-        }
-
-        // getComputerChoice();
+        
 
 
-        // console.log("22 Ishad")
-        function getHumanChoice(){
-            let playerInput = prompt("Enter Rock, Paper or Scissor")
-            playerInput = playerInput.toUpperCase().toString();
-            console.log(playerInput)   
-            console.log(typeof playerInput)
+        // function getHumanChoice(){
+        //     let playerInput = prompt("Enter Rock, Paper or Scissor")
+        //     playerInput = playerInput.toUpperCase().toString();
+        //     console.log(playerInput)   
+
             
-            if(playerInput != 'ROCK' && playerInput != 'PAPER' && playerInput != 'SCISSOR'){
-                console.log("Wrong Input")
-               
-            }else{
-            return playerInput;
-            }
-            
-         } 
+        //     if(playerInput != 'ROCK' && playerInput != 'PAPER' && playerInput != 'SCISSOR'){
+        //         console.log("Wrong Input")
+        //         getHumanChoice();
 
-        //  getHumanChoice();
-        // console.log("30 Ishad")
-        // console.log("33 Ishad")
+        //     }else{
+
+        //         return playerInput;
+
+        //     }
+            
+        //  } 
+
+
+        //  function getComputerChoice(){
+        //     const input = ['ROCK', 'PAPER','SCISSOR']
+        //     const randomIndex = Math.floor(Math.random() * 3);
+        //     const randomString = input[randomIndex];
+        //     console.log(randomString)
+        //     return randomString;
+
+        // }    
+
 
         let humanScore = 0;
         let computerScore = 0;
 
-        // console.log("39 Ishad")
-        // console.log(computerChoice);
-        // console.log("45 Ishad")
+        // function playRound(getHumanChoice,getComputerChoice){
+        //         console.log("Playe round function")
+        //     if(getHumanChoice == getComputerChoice){
+        //         console.log('Points for Human');
+        //         return 'Human';
+        //     }else if(getHumanChoice != 'ROCK' && getHumanChoice != 'PAPER' && getHumanChoice != 'SCISSOR'){
+        //      console.log('Enter Rock, Paper or Scissor');
+        //     }else{
+        //         console.log("Points for Computer")
+        //         return 'Computer';
+        //     }
+        // //  getHumanChoice === getComputerChoice ? console.log('Points for Human') : console.log('Points for computer')         
+                
+        // }
 
-        function playRound(getHumanChoice,getComputerChoice){
-       
-            if(getHumanChoice == getComputerChoice){
-                console.log('Points for Human');
-            }else if (getComputerChoice !== getHumanChoice){
-             console.log('Points for computer');
-            }
-        //  getHumanChoice === getComputerChoice ? console.log('Points for Human') : console.log('Points for computer')         
-       
-        }
+
+
         
-        const computerSelection = getComputerChoice();
-        const humanSelection = getHumanChoice();
- 
-        // console.log("Ishad")
+        function playRound(){
 
-        playRound(humanSelection,computerSelection);
+                function getHumanChoice(){
+                    let playerInput = prompt("Enter Rock, Paper or Scissor")
+                    playerInput = playerInput.toUpperCase().toString();
+                    console.log(playerInput)   
+
+                    if(playerInput != 'ROCK' && playerInput != 'PAPER' && playerInput != 'SCISSOR'){
+                        console.log("Wrong Input")
+                        playRound();
+                    }else{
+                        return playerInput;
+                    }
+                } 
+
+
+                function getComputerChoice(){
+                    const input = ['ROCK', 'PAPER','SCISSOR']
+                    const randomIndex = Math.floor(Math.random() * 3);
+                    const randomString = input[randomIndex];
+                    console.log(randomString)
+                    return randomString;
+                }    
+
+
+        let computerSelection = getComputerChoice();
+        const humanSelection = getHumanChoice();
+
+
+            if (humanSelection === computerSelection){
+                console.log("It's a tie")
+                console.log("Your: ", humanScore)
+                console.log("Computer: " + computerScore);
+
+            } else if((humanSelection === 'ROCK' && computerSelection === 'SCISSOR') ||
+                    (humanSelection === 'PAPER' && computerSelection === 'ROCK') ||
+                    (humanSelection === 'SCISSOR' && computerSelection === 'PAPER'))
+            {
+                humanScore++   
+                console.log("You get the point")
+                console.log("You:", humanScore)
+                console.log("Computer:", computerScore)
+
+            }else if((humanSelection === 'SCISSOR' && computerSelection === 'ROCK') ||
+                    (humanSelection === 'ROCK' && computerSelection === 'PAPER') ||
+                    (humanSelection === 'PAPER' && computerSelection === 'SCISSOR'))
+            {
+                computerScore++
+                console.log("Computer gets the point")
+                console.log("Computer:", computerScore)
+                console.log("You:", humanScore)        
+            }
+
+        }
+
+        function playGame(){
+                playRound();
+                playRound();
+                playRound();
+                playRound();
+                playRound();
+                playRound();
+                playRound();
+                playRound();
+                playRound();
+                playRound();
+
+
+                if(humanScore > computerScore){
+                    console.log("You win!")
+                }else if(humanScore < computerScore){
+                    console.log("You lost")
+                }else{
+                    console.log("Draw!")
+                }
+
+        }
+
+        playGame()
     
     </script>
 
