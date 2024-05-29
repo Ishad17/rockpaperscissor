@@ -10,7 +10,8 @@
             background-color:rgb(10, 44, 25) ;
         }
 
-        h2{color: antiquewhite;}
+        h2{color: antiquewhite;
+        font-weight: 800;}
 
         #computer{
             background-color: rgb(190, 108, 108);
@@ -30,19 +31,32 @@
             margin: 2px;
         }
 
+        .console{
+            background-color: rgb(148, 120, 84);
+            padding: 5px;
+            margin: 2px;
+        }
+
     </style>    
     
 </head>
 <body>
     <h2> Rock Paper Scissor</h2>
     
-    <div id="human"></div>
-    <div id="computer"></div>
-    
-    <div id="result"></div>
+    <div id="human">Your score:</div>
+    <div id="computer">Computer score:</div>
+    <div id="result">Result:</div>
+
+    <div class="console"> *****Check your browser console for complete result***** </div>
 
 
-    <script>
+
+    <script defer>
+
+document.addEventListener('DOMContentLoaded', (event) => {
+
+
+        
         
         // function getHumanChoice(){
         //     let playerInput = prompt("Enter Rock, Paper or Scissor")
@@ -118,13 +132,21 @@
 
             let computerSelection = getComputerChoice();
             const humanSelection = getHumanChoice();
+            // let humanScoreElement = document.getElementById("human")
+            // let computerScoreElement = document.getElementById("computer")
+               
+
+
+            // humanScoreElement.textContent = "Your score: " + humanScore;
+            // computerScoreElement.textContent = "Computer score: " + computerScore;
+                     
 
             // let scoreElement = document.getElementById("score");
 
 
                 if (humanSelection === computerSelection){
                     console.log("It's a tie")
-                    console.log("Your: ", humanScore)
+                    console.log("You: ", humanScore)
                     console.log("Computer: ", computerScore);
                     // scoreElement.textContent = "No point!";
 
@@ -159,11 +181,26 @@
         }
 
 
+    // <button onclick="displayString()">Press Me</button>
+    // <div id="result"></div>
+
+
+
+                    
+    //     function displayString() {
+    //         const predefinedString = "Hello, World!";
+    //         const resultElement = document.getElementById("result");
+    //         resultElement.textContent = predefinedString;
+    //         console.log(predefinedString)
+    //     }
+
+
 
 
 
 
         function playGame(){
+
                 playRound();
                 console.log('Round 1')      
                 playRound();
@@ -175,38 +212,42 @@
                 playRound();
                 console.log('Round 5')      
                 
-                
-                let resultElement = document.getElementById("result");
                 let humanScoreElement = document.getElementById("human")
                 let computerScoreElement = document.getElementById("computer")
-
+                let resultElement = document.getElementById("result");
 
                 if(humanScore > computerScore){
                         humanScoreElement.textContent = "Your score: " + humanScore;
                         computerScoreElement.textContent = "Computer score: " + computerScore;
                         console.log("You win!")
-                       
-                        resultElement.textContent = "You win!";
+                        resultElement.textContent = "Result: You win!";
                     }else if(humanScore < computerScore){
                         humanScoreElement.textContent = "Your score: " + humanScore;
                         computerScoreElement.textContent = "Computer score: " + computerScore;                        
                         console.log("You lost")
-                        resultElement.textContent = "You lost!";
+                        resultElement.textContent = "Result: You lost!";
 
                 }else{
                         humanScoreElement.textContent = "Your score: " + humanScore;
                         computerScoreElement.textContent = "Computer score: " + computerScore;
                         console.log("Draw!")
-                        resultElement.textContent = "Draw!";
+                        resultElement.textContent = "Result: Draw!";
 
                 }
+                
 
+              
 
         }
 
         playGame()
+    });
+
     
+  for (let i = 0; i < 1_000_000_000; i++);
+  
     </script>
+
 
 </body>
 </html>
