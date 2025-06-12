@@ -201,17 +201,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         function playGame(){
 
+            for (i = 0; i < 5; i++){
                 playRound();
-                console.log('Round 1')      
-                playRound();
-                console.log('Round 2')      
-                playRound();
-                console.log('Round 3')      
-                playRound();
-                console.log('Round 4')                
-                playRound();
-                console.log('Round 5')      
-                
+                console.log(`Round ${i}`);
+            }
+      
                 let humanScoreElement = document.getElementById("human")
                 let computerScoreElement = document.getElementById("computer")
                 let resultElement = document.getElementById("result");
