@@ -69,56 +69,47 @@
 
 
     <script>
-
-
-                    function getComputerChoice(){
                     
-                        const input = ['ROCK', 'PAPER','SCISSOR']
-                        const randomIndex = Math.floor(Math.random() * 3);
-                        const randomString = input[randomIndex];
-                        return randomString;
-                    
-                    }    
+                            let humanScore = 0;
+                            let computerScore = 0;
 
+                    const buttons = document.querySelectorAll("button");
 
-
-
-                    let computerChoice = getComputerChoice();
-
-
-                    console.log(`this is ${computerChoice} ` );
-
-
-                        const buttons = document.querySelectorAll("button");
-
-                        // we use the .forEach method to iterate through each button
-                        buttons.forEach((button) => {
+                    // we use the .forEach method to iterate through each button
+                    buttons.forEach((button) => {
                         // and for each one we add a 'click' listener
                         button.addEventListener("click", () => {
 
-                            console.log(button.id);
-                            
-                            if(button.id == computerChoice){
-                                console.log("MATCHED!");
+                        console.log(button.id);
+
+                        const input = ['ROCK', 'PAPER','SCISSOR']
+                        const randomIndex = Math.floor(Math.random() * 3);
+                        const randomString = input[randomIndex];
+
+                        console.log(randomString);
+
+                            if(button.id == randomString){
+                                return "Matched!"
                             }
 
-                                if(button.id != 'ROCK' && button.id != 'PAPER' && button.id != 'SCISSOR'){
+                            if(button.id != 'ROCK' && button.id != 'PAPER' && button.id != 'SCISSOR'){
                                  
-                                    console.log("Wrong Input")
-                                    playRound();
+                                console.log("Wrong Input")
+                                playRound();
                                 
-                                }else{
-                                    return playerInput;
-                                }
-                        });
+                            }else{
+                                return playerInput;
+                            }
                         });
 
-        // document.addEventListener('DOMContentLoaded', (event) => {
-        
-        // console.log("playerInput")
+                        document.getElementById("human");
 
-        let humanScore = 0;
-        let computerScore = 0;
+                    });
+
+                    console.log("hi!!! line 103")
+
+        // let humanScore = 0;
+        // let computerScore = 0;
 
         // function playRound(){
 
@@ -230,7 +221,8 @@
     //                     computerScoreElement.textContent = "Computer score: " + computerScore;                        
     //                     console.log("You lost")
     //                     resultElement.textContent = "Result: You lost!";
-
+                    console.log("hi!!! line 219")
+                    
     //             }else{
     //                     humanScoreElement.textContent = "Your score: " + humanScore;
     //                     computerScoreElement.textContent = "Computer score: " + computerScore;
