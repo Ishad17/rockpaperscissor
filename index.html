@@ -52,9 +52,9 @@
 
        <button onclick="alert('Hello World')">Click Me</button>
 
-        <button id="rock">ROCK</button>
-        <button id="paper">PAPER</button>
-        <button id="scissor">SCISSOR</button>
+        <button id="ROCK">ROCK</button>
+        <button id="PAPER">PAPER</button>
+        <button id="SCISSOR">SCISSOR</button>
 
 
 
@@ -70,46 +70,73 @@
 
     <script>
 
+
+                    function getComputerChoice(){
+                    
+                        const input = ['ROCK', 'PAPER','SCISSOR']
+                        const randomIndex = Math.floor(Math.random() * 3);
+                        const randomString = input[randomIndex];
+                        return randomString;
+                    
+                    }    
+
+
+
+
+                    let computerChoice = getComputerChoice();
+
+
+                    console.log(`this is ${computerChoice} ` );
+
+
+                        const buttons = document.querySelectorAll("button");
+
+                        // we use the .forEach method to iterate through each button
+                        buttons.forEach((button) => {
+                        // and for each one we add a 'click' listener
+                        button.addEventListener("click", () => {
+
+                            console.log(button.id);
+                            
+                            if(button.id == computerChoice){
+                                console.log("MATCHED!");
+                            }
+
+                                if(button.id != 'ROCK' && button.id != 'PAPER' && button.id != 'SCISSOR'){
+                                 
+                                    console.log("Wrong Input")
+                                    playRound();
+                                
+                                }else{
+                                    return playerInput;
+                                }
+                        });
+                        });
+
         // document.addEventListener('DOMContentLoaded', (event) => {
+        
+        // console.log("playerInput")
 
         let humanScore = 0;
         let computerScore = 0;
 
         // function playRound(){
 
-            let playerInput;
+            let playerInput = 'saaw';
+
 
                     // function getHumanChoice(){
 
                         // const btn = document.querySelector("#rock");
                         //     btn.onclick = () => alert('ROCK');
 
-                            const btn = document.querySelector("#rock");
-                                btn.addEventListener("click", () => {
-                                    playerInput = 'ROCK';
-                                });
+                            // const btn = document.querySelector("#rock");
+                            //     btn.addEventListener("click", () => {
+                            //     playerInput = 'ROCK';
+                            //     console.log(playerInput)
+                            
+                            // });
 
-                            console.log(playerInput)
-
-                    //     if(playerInput != 'ROCK' && playerInput != 'PAPER' && playerInput != 'SCISSOR'){
-                    //         console.log("Wrong Input")
-                    //         playRound();
-                    //     }else{
-                    //         return playerInput;
-                    //     }
-                    // // } 
-
-
-                    // function getComputerChoice(){
-                    //     const input = ['ROCK', 'PAPER','SCISSOR']
-                    //     const randomIndex = Math.floor(Math.random() * 3);
-                    //     const randomString = input[randomIndex];
-                    //     console.log(randomString)
-                    //     return randomString;
-                    // }    
-
-
-            // let computerSelection = getComputerChoice();
             // const humanSelection = getHumanChoice();
 
             // let humanScoreElement = document.getElementById("human")
