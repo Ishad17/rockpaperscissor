@@ -68,7 +68,7 @@
                                 playRound();
                                 
                             }else{
-                                return playerInput;
+
                             }
                         });
 
@@ -77,24 +77,27 @@
                     });
 
                 if(humanScore > computerScore){
-                        humanScoreElement.textContent = "Your score: " + humanScore;
-                        computerScoreElement.textContent = "Computer score: " + computerScore;
-                        console.log("You win!")
-                        resultElement.textContent = "Result: You win!";
+                        // humanScoreElement.textContent = "Your score: " + humanScore;
+                        // computerScoreElement.textContent = "Computer score: " + computerScore;
+                        finalScore.textContent = "You win!";
+
+                        // resultElement.textContent = "Result: You win!";
                     }else if(humanScore < computerScore){
-                        humanScoreElement.textContent = "Your score: " + humanScore;
-                        computerScoreElement.textContent = "Computer score: " + computerScore;                        
-                        console.log("You lost")
-                        resultElement.textContent = "Result: You lost!";
+                        // humanScoreElement.textContent = "Your score: " + humanScore;
+                        // computerScoreElement.textContent = "Computer score: " + computerScore;                        
+                        finalScore.textContent = "You lost!";
+                        // resultElement.textContent = "Result: You lost!";
                     
-                }else{
-                        humanScoreElement.textContent = "Your score: " + humanScore;
-                        computerScoreElement.textContent = "Computer score: " + computerScore;
-                        console.log("Draw!")
-                        resultElement.textContent = "Result: Draw!";
+                }else if (humanScore =! 0 && computerScore == humanScore){
+                        // humanScoreElement.textContent = "Your score: " + humanScore;
+                        // computerScoreElement.textContent = "Computer score: " + computerScore;
+                        finalScore.textContent = "Draww!!";
+                                            console.log("hi!!! line 103")
+
+
+                        // resultElement.textContent = "Result: Draw!";
                 }
 
-                    console.log("hi!!! line 103")
 
         // let humanScore = 0;
         // let computerScore = 0;
