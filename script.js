@@ -1,8 +1,7 @@
                     
-                            let round = 0;
-                            let humanScore = 0;
-                            let computerScore = 0;
-                        
+                    let round = 0;
+                    let humanScore = 0;
+                    let computerScore = 0;
 
                     const buttons = document.querySelectorAll("button");
                     const resultDiv = document.getElementById("result");
@@ -58,46 +57,44 @@
                             humanDiv.textContent = `${humanScore}`; 
                             computerDiv.textContent = `${computerScore}`;
 
+                        if((round >= 5) && (humanScore > computerScore)){
+                        finalScore.textContent = "You win!";
+                        resultDiv.textContent = "Game over! No more rounds.";
+                                    
+                        // resultElement.textContent = "Result: You win!";
+                    }else if((round >= 5) && (humanScore == computerScore)){
+                        finalScore.textContent = "Draaaaaw!";
+            resultDiv.textContent = "Game over! No more rounds.";
+                                            
+                }else if(round >= 5) {
+                    resultDiv.textContent = "Game over! No more rounds.";    
+                    finalScore.textContent = "You kost!!";
 
-
-
-
-                            if(button.id != 'ROCK' && button.id != 'PAPER' && button.id != 'SCISSOR'){
-                                 
-                                console.log("Wrong Input")
-                                playRound();
+                }
+                                    return;
                                 
-                            }else{
 
-                            }
+
+                            // if(button.id != 'ROCK' && button.id != 'PAPER' && button.id != 'SCISSOR'){
+                                 
+                            //     console.log("Wrong Input")
+                            //     playRound();
+                                
+                            // }else{
+
+                            // }
+
+
+
+
+
                         });
 
                         document.getElementById("human");
 
+
                     });
-
-                if(humanScore > computerScore){
-                        // humanScoreElement.textContent = "Your score: " + humanScore;
-                        // computerScoreElement.textContent = "Computer score: " + computerScore;
-                        finalScore.textContent = "You win!";
-
-                        // resultElement.textContent = "Result: You win!";
-                    }else if(humanScore < computerScore){
-                        // humanScoreElement.textContent = "Your score: " + humanScore;
-                        // computerScoreElement.textContent = "Computer score: " + computerScore;                        
-                        finalScore.textContent = "You lost!";
-                        // resultElement.textContent = "Result: You lost!";
-                    
-                }else if (humanScore =! 0 && computerScore == humanScore){
-                        // humanScoreElement.textContent = "Your score: " + humanScore;
-                        // computerScoreElement.textContent = "Computer score: " + computerScore;
-                        finalScore.textContent = "Draww!!";
-                                            console.log("hi!!! line 103")
-
-
-                        // resultElement.textContent = "Result: Draw!";
-                }
-
+                    console.log("hi!!! line 103")
 
         // let humanScore = 0;
         // let computerScore = 0;
