@@ -76,7 +76,7 @@
                         });
 
                         document.getElementById("human");
-
+/s
 
                     });
                     console.log("hi!!! line 103")
