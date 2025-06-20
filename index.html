@@ -13,234 +13,98 @@
         h2{color: antiquewhite;
         font-weight: 800;}
 
-        #computer{
+        .show{
             background-color: rgb(190, 108, 108);
-            padding: 5px;
-            margin: 2px;
-        }
-        #human{            
-            padding: 5px;
-            margin: 2px;
-            background-color: rgb(96, 177, 93);
+            padding: 10px;
+            width: 100%;    
         }
 
-        #score,
+        #computer{
+        background-color: rgb(190, 108, 108);
+        
+        }
+
+        #human{            
+            background-color: rgb(23, 142, 74);
+        }
+
         #result{
             background-color: antiquewhite;
-            padding: 5px;
-            margin: 2px;
+        } 
+
+        button{
+            margin: 10px;
         }
 
         .console{
-            background-color: rgb(148, 120, 84);
+            color: rgb(255, 255, 255);
             padding: 5px;
             margin: 2px;
+        }
+
+        .desc{
+            padding: 5px;
+            width: 15%;  
+            min-width: 150px;   /* Minimum width */
+            max-width: 600px;   /* Maximum width */
+            color: antiquewhite;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .parent{
+            display: flex;
+            padding: 10px;
+            flex-direction: row;
         }
 
     </style>    
     
 </head>
 <body>
+
     <h2> Rock Paper Scissor</h2>
-    
-    <div id="human">Your score:</div>
-    <div id="computer">Computer score:</div>
-    <div id="result">Result:</div>
-
-    <div class="console"> *****Check your browser console for complete result***** </div>
 
 
 
-    <script defer>
+       <button id="Click MEEE" onclick="alert('Hello World')">Click Me</button>
 
-document.addEventListener('DOMContentLoaded', (event) => {
+        <button id="ROCK">ROCK</button>
+        <button id="PAPER">PAPER</button>
+        <button id="SCISSOR">SCISSOR</button>
 
+    <div class="container">
 
-        
-        
-        // function getHumanChoice(){
-        //     let playerInput = prompt("Enter Rock, Paper or Scissor")
-        //     playerInput = playerInput.toUpperCase().toString();
-        //     console.log(playerInput)   
-
-            
-        //     if(playerInput != 'ROCK' && playerInput != 'PAPER' && playerInput != 'SCISSOR'){
-        //         console.log("Wrong Input")
-        //         getHumanChoice();
-
-        //     }else{
-
-        //         return playerInput;
-
-        //     }
-            
-        //  } 
+                <div class="parent">
+                <div class="desc">Result:</div>
+                <div class ="show" id="result"></div>
+        </div>
 
 
-        //  function getComputerChoice(){
-        //     const input = ['ROCK', 'PAPER','SCISSOR']
-        //     const randomIndex = Math.floor(Math.random() * 3);
-        //     const randomString = input[randomIndex];
-        //     console.log(randomString)
-        //     return randomString;
-
-        // }    
-
-        let humanScore = 0;
-        let computerScore = 0;
-
-        // function playRound(getHumanChoice,getComputerChoice){
-        //         console.log("Playe round function")
-        //     if(getHumanChoice == getComputerChoice){
-        //         console.log('Points for Human');
-        //         return 'Human';
-        //     }else if(getHumanChoice != 'ROCK' && getHumanChoice != 'PAPER' && getHumanChoice != 'SCISSOR'){
-        //      console.log('Enter Rock, Paper or Scissor');
-        //     }else{
-        //         console.log("Points for Computer")
-        //         return 'Computer';
-        //     }
-        // //  getHumanChoice === getComputerChoice ? console.log('Points for Human') : console.log('Points for computer')         
-                
-        // }
-
-        
-        function playRound(){
-
-                    function getHumanChoice(){
-                        let playerInput = prompt("Enter Rock, Paper or Scissor")
-                        playerInput = playerInput.toUpperCase().toString();
-                        console.log(playerInput)   
-
-                        if(playerInput != 'ROCK' && playerInput != 'PAPER' && playerInput != 'SCISSOR'){
-                            console.log("Wrong Input")
-                            playRound();
-                        }else{
-                            return playerInput;
-                        }
-                    } 
-
-
-                    function getComputerChoice(){
-                        const input = ['ROCK', 'PAPER','SCISSOR']
-                        const randomIndex = Math.floor(Math.random() * 3);
-                        const randomString = input[randomIndex];
-                        console.log(randomString)
-                        return randomString;
-                    }    
-
-
-            let computerSelection = getComputerChoice();
-            const humanSelection = getHumanChoice();
-            // let humanScoreElement = document.getElementById("human")
-            // let computerScoreElement = document.getElementById("computer")
-               
-
-
-            // humanScoreElement.textContent = "Your score: " + humanScore;
-            // computerScoreElement.textContent = "Computer score: " + computerScore;
-                     
-
-            // let scoreElement = document.getElementById("score");
-
-
-                if (humanSelection === computerSelection){
-                    console.log("It's a tie")
-                    console.log("You: ", humanScore)
-                    console.log("Computer: ", computerScore);
-                    // scoreElement.textContent = "No point!";
-
-
-                } else if((humanSelection === 'ROCK' && computerSelection === 'SCISSOR') ||
-                        (humanSelection === 'PAPER' && computerSelection === 'ROCK') ||
-                        (humanSelection === 'SCISSOR' && computerSelection === 'PAPER'))
-                {
-                    humanScore++   
-                    console.log("You get the point")
-                    console.log("You:", humanScore)
-                    console.log("Computer:", computerScore)
-                    // return scoreElement.textContent = "You get the point!";
-                    
-
-
-                }else if((humanSelection === 'SCISSOR' && computerSelection === 'ROCK') ||
-                        (humanSelection === 'ROCK' && computerSelection === 'PAPER') ||
-                        (humanSelection === 'PAPER' && computerSelection === 'SCISSOR'))
-                {
-                    computerScore++
-                    console.log("Computer gets the point")
-                    console.log("Computer:", computerScore)
-                    console.log("You:", humanScore)        
-                    // scoreElement.textContent = "Computer gets the point!";
-
-                }
-
-
-        
-
-        }
-
-
-    // <button onclick="displayString()">Press Me</button>
-    // <div id="result"></div>
+        <div class="parent">
+                <div class="desc">Your score:</div>
+                <div class ="show" id="human"></div>
+        </div>
+        <div class="parent">
+                <div class="desc">Computer score:</div>
+                <div class ="show" id="computer"></div>
+        </div>
 
 
 
-                    
-    //     function displayString() {
-    //         const predefinedString = "Hello, World!";
-    //         const resultElement = document.getElementById("result");
-    //         resultElement.textContent = predefinedString;
-    //         console.log(predefinedString)
-    //     }
+    </div>
+
+    <!-- <div id="round">Round: </div> -->
+
+   
+    <div class="console"> ****  Check your browser console for complete result  **** </div>
 
 
 
-
-
-
-        function playGame(){
-
-            for (i = 0; i < 5; i++){
-                playRound();
-                console.log(`Round ${i}`);
-            }
-      
-                let humanScoreElement = document.getElementById("human")
-                let computerScoreElement = document.getElementById("computer")
-                let resultElement = document.getElementById("result");
-
-                if(humanScore > computerScore){
-                        humanScoreElement.textContent = "Your score: " + humanScore;
-                        computerScoreElement.textContent = "Computer score: " + computerScore;
-                        console.log("You win!")
-                        resultElement.textContent = "Result: You win!";
-                    }else if(humanScore < computerScore){
-                        humanScoreElement.textContent = "Your score: " + humanScore;
-                        computerScoreElement.textContent = "Computer score: " + computerScore;                        
-                        console.log("You lost")
-                        resultElement.textContent = "Result: You lost!";
-
-                }else{
-                        humanScoreElement.textContent = "Your score: " + humanScore;
-                        computerScoreElement.textContent = "Computer score: " + computerScore;
-                        console.log("Draw!")
-                        resultElement.textContent = "Result: Draw!";
-
-                }
-                
-
-              
-
-        }
-
-        playGame()
-    });
-
-    
-  for (let i = 0; i < 1_000_000_000; i++);
-  
-    </script>
+<script src="script.js" ></script>
 
 
 </body>
