@@ -2,12 +2,13 @@
                             let round = 0;
                             let humanScore = 0;
                             let computerScore = 0;
+                        
 
-                     const buttons = document.querySelectorAll("button");
-
+                    const buttons = document.querySelectorAll("button");
                     const resultDiv = document.getElementById("result");
                     const humanDiv = document.getElementById("human");
                     const computerDiv = document.getElementById("computer");
+                    const finalScore = document.getElementById("final");
 
                     // we use the .forEach method to iterate through each button
                     buttons.forEach((button) => {
@@ -75,6 +76,24 @@
 
                     });
 
+                if(humanScore > computerScore){
+                        humanScoreElement.textContent = "Your score: " + humanScore;
+                        computerScoreElement.textContent = "Computer score: " + computerScore;
+                        console.log("You win!")
+                        resultElement.textContent = "Result: You win!";
+                    }else if(humanScore < computerScore){
+                        humanScoreElement.textContent = "Your score: " + humanScore;
+                        computerScoreElement.textContent = "Computer score: " + computerScore;                        
+                        console.log("You lost")
+                        resultElement.textContent = "Result: You lost!";
+                    
+                }else{
+                        humanScoreElement.textContent = "Your score: " + humanScore;
+                        computerScoreElement.textContent = "Computer score: " + computerScore;
+                        console.log("Draw!")
+                        resultElement.textContent = "Result: Draw!";
+                }
+
                     console.log("hi!!! line 103")
 
         // let humanScore = 0;
@@ -82,7 +101,7 @@
 
         // function playRound(){
 
-            let playerInput = 'saaw';
+            // let playerInput = 'saaw';
 
 
                     // function getHumanChoice(){
@@ -161,29 +180,10 @@
     //         //     console.log(`Round ${i}`);
     //         // }
       
-    //             let humanScoreElement = document.getElementById("human")
-    //             let computerScoreElement = document.getElementById("computer")
-    //             let resultElement = document.getElementById("result");
+                // let humanScoreElement = document.getElementById("human")
+                // let computerScoreElement = document.getElementById("computer")
+                // let resultElement = document.getElementById("result");
 
-    //             if(humanScore > computerScore){
-    //                     humanScoreElement.textContent = "Your score: " + humanScore;
-    //                     computerScoreElement.textContent = "Computer score: " + computerScore;
-    //                     console.log("You win!")
-    //                     resultElement.textContent = "Result: You win!";
-    //                 }else if(humanScore < computerScore){
-    //                     humanScoreElement.textContent = "Your score: " + humanScore;
-    //                     computerScoreElement.textContent = "Computer score: " + computerScore;                        
-    //                     console.log("You lost")
-    //                     resultElement.textContent = "Result: You lost!";
-                    console.log("hi!!! line 219")
-                    
-    //             }else{
-    //                     humanScoreElement.textContent = "Your score: " + humanScore;
-    //                     computerScoreElement.textContent = "Computer score: " + computerScore;
-    //                     console.log("Draw!")
-    //                     resultElement.textContent = "Result: Draw!";
-
-    //             }
                 
 
               
