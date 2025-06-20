@@ -76,7 +76,7 @@
                         });
 
                         document.getElementById("human");
-/s
+//checking on git branch development
 
                     });
                     console.log("hi!!! line 103")
