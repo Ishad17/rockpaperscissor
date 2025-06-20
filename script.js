@@ -72,20 +72,6 @@
 
                 }
                                     return;
-                                
-
-
-                            // if(button.id != 'ROCK' && button.id != 'PAPER' && button.id != 'SCISSOR'){
-                                 
-                            //     console.log("Wrong Input")
-                            //     playRound();
-                                
-                            // }else{
-
-                            // }
-
-
-
 
 
                         });
