@@ -1,13 +1,13 @@
                     
-                            let round = 0;
-                            let humanScore = 0;
-                            let computerScore = 0;
+                    let round = 0;
+                    let humanScore = 0;
+                    let computerScore = 0;
 
-                     const buttons = document.querySelectorAll("button");
-
+                    const buttons = document.querySelectorAll("button");
                     const resultDiv = document.getElementById("result");
                     const humanDiv = document.getElementById("human");
                     const computerDiv = document.getElementById("computer");
+                    const finalScore = document.getElementById("final");
 
                     // we use the .forEach method to iterate through each button
                     buttons.forEach((button) => {
@@ -57,24 +57,43 @@
                             humanDiv.textContent = `${humanScore}`; 
                             computerDiv.textContent = `${computerScore}`;
 
+                        if((round >= 5) && (humanScore > computerScore)){
+                        finalScore.textContent = "You win!";
+                        resultDiv.textContent = "Game over! No more rounds.";
+                                    
+                        // resultElement.textContent = "Result: You win!";
+                    }else if((round >= 5) && (humanScore == computerScore)){
+                        finalScore.textContent = "Draaaaaw!";
+            resultDiv.textContent = "Game over! No more rounds.";
+                                            
+                }else if(round >= 5) {
+                    resultDiv.textContent = "Game over! No more rounds.";    
+                    finalScore.textContent = "You kost!!";
 
-
-
-
-                            if(button.id != 'ROCK' && button.id != 'PAPER' && button.id != 'SCISSOR'){
-                                 
-                                console.log("Wrong Input")
-                                playRound();
+                }
+                                    return;
                                 
-                            }else{
-                                return playerInput;
-                            }
+
+
+                            // if(button.id != 'ROCK' && button.id != 'PAPER' && button.id != 'SCISSOR'){
+                                 
+                            //     console.log("Wrong Input")
+                            //     playRound();
+                                
+                            // }else{
+
+                            // }
+
+
+
+
+
                         });
 
                         document.getElementById("human");
 
-                    });
 
+                    });
                     console.log("hi!!! line 103")
 
         // let humanScore = 0;
@@ -82,7 +101,7 @@
 
         // function playRound(){
 
-            let playerInput = 'saaw';
+            // let playerInput = 'saaw';
 
 
                     // function getHumanChoice(){
@@ -161,29 +180,10 @@
     //         //     console.log(`Round ${i}`);
     //         // }
       
-    //             let humanScoreElement = document.getElementById("human")
-    //             let computerScoreElement = document.getElementById("computer")
-    //             let resultElement = document.getElementById("result");
+                // let humanScoreElement = document.getElementById("human")
+                // let computerScoreElement = document.getElementById("computer")
+                // let resultElement = document.getElementById("result");
 
-    //             if(humanScore > computerScore){
-    //                     humanScoreElement.textContent = "Your score: " + humanScore;
-    //                     computerScoreElement.textContent = "Computer score: " + computerScore;
-    //                     console.log("You win!")
-    //                     resultElement.textContent = "Result: You win!";
-    //                 }else if(humanScore < computerScore){
-    //                     humanScoreElement.textContent = "Your score: " + humanScore;
-    //                     computerScoreElement.textContent = "Computer score: " + computerScore;                        
-    //                     console.log("You lost")
-    //                     resultElement.textContent = "Result: You lost!";
-                    console.log("hi!!! line 219")
-                    
-    //             }else{
-    //                     humanScoreElement.textContent = "Your score: " + humanScore;
-    //                     computerScoreElement.textContent = "Computer score: " + computerScore;
-    //                     console.log("Draw!")
-    //                     resultElement.textContent = "Result: Draw!";
-
-    //             }
                 
 
               
