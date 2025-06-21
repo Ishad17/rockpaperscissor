@@ -8,6 +8,8 @@
             const humanDiv = document.getElementById("human");
             const computerDiv = document.getElementById("computer");
             const finalScore = document.getElementById("final");
+            const playerInput = document.getElementById("pl");
+            const computerInput = document.getElementById("pc");
 
                     // we use the .forEach method to iterate through each button
         buttons.forEach((button) => {
@@ -24,6 +26,9 @@
 
                     const input = ['ROCK', 'PAPER','SCISSOR']
                     const randomString = input[Math.floor(Math.random() * 3)];
+
+                    playerInput.textContent = playerSelection;
+                    computerInput.textContent = randomString;
                     
                     if (playerSelection === randomString){
                         resultDiv.textContent = "No point!";
@@ -44,19 +49,14 @@
                         humanDiv.textContent = `${humanScore}`; 
                         computerDiv.textContent = `${computerScore}`;
 
-                    if((humanScore == 5) && (humanScore > computerScore)){
+                    if(humanScore == 5){
                         finalScore.textContent = "You win!";
                         resultDiv.textContent = "Game over! No more rounds.";
                         disableButtons()
-                        return;
-                    }else if((computerScore == 5) && (humanScore == computerScore)){
-                        finalScore.textContent = "Draaaaaw!";
-                        resultDiv.textContent = "Game over! No more rounds.";
-                        disableButtons()
-                        return;                                                    
+                        return;                         
                     }else if(computerScore == 5) {
                         resultDiv.textContent = "Game over! No more rounds.";    
-                        finalScore.textContent = "You kost!!";
+                        finalScore.textContent = "You Lost!!";
                         disableButtons()
                         return;                            
                     }

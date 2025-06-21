@@ -7,82 +7,108 @@
 
     <style>
         body{
-            background-color:rgb(10, 44, 25) ;
+            background-color:rgb(2, 48, 22) ;
         }
 
-        h2{color: antiquewhite;
-        font-weight: 800;}
-
-        .show{
-            background-color: rgb(190, 108, 108);
-            padding: 10px;
-            width: 100%;    
+        h2{
+            color: antiquewhite;
+            font-weight: 800;
+            font-size: 30px;
+            margin-left: 20px;
         }
-
-        #computer{
-        background-color: rgb(190, 108, 108);
-        
-        }
-
-        .player{
-            flex-direction: row;
-            flex: 1;
-        }
-        
-
-        #human{            
-            background-color: rgb(23, 142, 74);
-        }
-
-        #result{
-            background-color: antiquewhite;
-        } 
-
         button{
-            margin: 10px;
-        }
-
-        .console{
-            color: rgb(255, 255, 255);
-            padding: 5px;
-            margin: 2px;
-        }
-
-        .display{
-            display: flex;            
-            color: rgb(143, 77, 243);
-            text-align: center;
-
-        }
-
-        .output{
-            text-align: center;
-        }
-
-        .computer{
-            flex-direction: row;
-            flex: 1;
-
-        }
-
-        .desc{
-            flex-direction: column;
-            padding: 5px;
-            width: 15%;  
-            min-width: 150px;   /* Minimum width */
-            max-width: 600px;   /* Maximum width */
-            color: rgb(226, 133, 11);
+            padding: 10px;
+            width: 100px;
+            margin: 5px 20px 20px 70px;
         }
 
         .container{
             display: flex;
+            width: 75%;
+        }
+
+        .tableL{
+            flex: 1;
+            display: flex;
+        }
+        
+        .desc{
+            color: antiquewhite;
+            padding: 10px;
+            margin: 2px;
+        }
+
+        .parent1{
+
+            flex: 1;
+        }
+
+        .parent2{
+                        color:darkseagreen;
+            flex: 2;
+            display: flex;
             flex-direction: column;
         }
 
-        .parent{
+        .show{
+            background-color: rgb(5, 175, 118);
+            margin: 2px;
+            flex:1;
+            color: black;
+            padding: 8px;
+        }
+
+        .tableR{
+            flex: 1;
             display: flex;
+            /* background-color: wheat; */
+        }
+
+        .player{
+            flex:1;
+            /* background-color: cornflowerblue; */
+                    flex-direction: column;
+            display: flex;
+        }
+
+        .computer{
+            flex:1;
+            display: flex;
+                        flex-direction: column;
+        }
+
+        .tag{
+            flex:1;
+            text-align: center;
+            
+        color: antiquewhite;
+        }
+
+        .output{
+            text-align: center;
+            color: antiquewhite;     
+            flex:2;
             padding: 10px;
-            flex-direction: row;
+            margin: 1px 30px 60px 30px;
+            border: 2px wheat solid;
+        }
+
+        #final{
+            font-weight: 500;
+        }
+
+        .btn3 {
+            padding: 10px 20px;
+            background-color: #78afdc;
+            border-radius: 10px;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .btn3:hover {
+            transform: scale(1.5);
         }
 
     </style>    
@@ -91,53 +117,52 @@
 <body>
 
     <h2> Rock Paper Scissor</h2>
-    <div class="display" style="width: 50%; border: 2px solid rgb(147, 76, 107); align-content:center ;">
 
-        <div class="player">        
-        <div class="desc player">Player</div>
-        <div class="output">ss</div>
-        </div>
-        <div class="computer">
-            <div class="desc computer">Computer</div>
-            <div class="output">ss</div>
-        </div>   
-    </div>
-
-       <button id="Click MEEE" onclick="alert('Hello World')">Click Me</button>
-
-        <button id="ROCK">ROCK</button>
-        <button id="PAPER">PAPER</button>
-        <button id="SCISSOR">SCISSOR</button>
+       <!-- <button id="Click MEEE" onclick="alert('Hello World')">Click Me</button> -->
+        
+        <button class="btn3" id="ROCK">ROCK</button>
+        <button class="btn3" id="PAPER">PAPER</button>
+        <button class="btn3" id="SCISSOR">SCISSOR</button>
 
     <div class="container">
 
-                <div class="parent">
-                <div class="desc">Status:</div>
-                <div class ="show" id="result"></div>
+        <div class="tableL">
+
+                <div class="parent1">
+                        <div class="desc">Status:</div>
+                        <div class="desc">Your score:</div>
+                        <div class="desc">Computer score:</div>
+                        <div class="desc">FINAL RESULT:</div>                        
+                </div>
+
+                <div class="parent2">
+                    <div class ="show" id="result"></div>
+                    <div class ="show" id="human"></div>
+                    <div class ="show" id="computer"></div>
+                    <div class="show" id="final"></div>
+                </div>
+                
         </div>
 
+        <div class="tableR">
 
-        <div class="parent">
-                <div class="desc">Your score:</div>
-                <div class ="show" id="human"></div>
-        </div>
-        <div class="parent">
-                <div class="desc">Computer score:</div>
-                <div class ="show" id="computer"></div>
-        </div>
-        <div class="parent">
-                <div class="desc">Final Result: </div>
-                <div class="show" id="final" style="background-color:rgb(80, 127, 120)"></div>
+                <div class="player">        
+                                        <div class="tag">Player</div>
+                                        <div class="output" id="pl"> </div>
+                </div>
+                <div class="computer">
+                                        <div class="tag ">Computer</div>
+                                        <div class="output" id="pc"></div>
+                </div>   
         </div>
 
-
-
+        </div>
     </div>
 
     <!-- <div id="round">Round: </div> -->
 
    
-    <div class="console"> ****  Check your browser console for complete result  **** </div>
+    <div class="console" style="padding: 20px; font-size: larger ;color: tomato;"> * The winning score is 5  </div>
 
 
 
