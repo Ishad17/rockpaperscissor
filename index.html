@@ -42,12 +42,18 @@
             margin: 2px;
         }
 
+        .display{
+            flex-direction: column;
+            color: #0f0f;
+        }
+
         .desc{
+            flex-direction: column;
             padding: 5px;
             width: 15%;  
             min-width: 150px;   /* Minimum width */
             max-width: 600px;   /* Maximum width */
-            color: antiquewhite;
+            color: rgb(226, 133, 11);
         }
 
         .container{
@@ -67,8 +73,17 @@
 <body>
 
     <h2> Rock Paper Scissor</h2>
+    <div class="display" style="width: 50%; flex-direction: column; border: 2px solid rgb(147, 76, 107); align-content:center ;">
 
-
+        <div class="player" style=" border: 2px solid red;">        
+        <div class="desc player">Player</div>
+        <div class="display player">ss</div>
+        </div>
+        <div class="computer" style=" border: 2px solid red;">
+            <div class="desc computer">Computer</div>
+            <div class="display computer">ss</div>
+        </div>   
+    </div>
 
        <button id="Click MEEE" onclick="alert('Hello World')">Click Me</button>
 

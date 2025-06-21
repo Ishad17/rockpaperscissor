@@ -13,24 +13,29 @@
         buttons.forEach((button) => {
                         // and for each one we add a 'click' listener
                 button.addEventListener("click", () => {
+                        playRound(button.id);
+                });
 
-                        round++;    
+
+                        // round++;    
+
+                function playRound(playerSelection){
 
                     const input = ['ROCK', 'PAPER','SCISSOR']
                     const randomString = input[Math.floor(Math.random() * 3)];
                     
-                    if (button.id === randomString){
+                    if (playerSelection === randomString){
                         resultDiv.textContent = "No point!";
 
-                    } else if((button.id === 'ROCK' && randomString === 'SCISSOR') ||
-                        (button.id === 'PAPER' && randomString === 'ROCK') ||
-                        (button.id === 'SCISSOR' && randomString === 'PAPER')){
+                    } else if((playerSelection === 'ROCK' && randomString === 'SCISSOR') ||
+                        (playerSelection === 'PAPER' && randomString === 'ROCK') ||
+                        (playerSelection === 'SCISSOR' && randomString === 'PAPER')){
                         humanScore++;
                         resultDiv.textContent = "Your point!";
 
-                    }else if((button.id === 'SCISSOR' && randomString === 'ROCK') ||
-                        (button.id === 'ROCK' && randomString === 'PAPER') ||
-                        (button.id === 'PAPER' && randomString === 'SCISSOR'))
+                    }else if((playerSelection === 'SCISSOR' && randomString === 'ROCK') ||
+                        (playerSelection === 'ROCK' && randomString === 'PAPER') ||
+                        (playerSelection === 'PAPER' && randomString === 'SCISSOR'))
                     {
                         computerScore++;
                         resultDiv.textContent = "Computer's point!";
@@ -38,21 +43,23 @@
                         humanDiv.textContent = `${humanScore}`; 
                         computerDiv.textContent = `${computerScore}`;
 
-                if((round >= 5) && (humanScore > computerScore)){
-                    finalScore.textContent = "You win!";
-                    resultDiv.textContent = "Game over! No more rounds.";
-                    return;
-                }else if((round >= 5) && (humanScore == computerScore)){
-                    finalScore.textContent = "Draaaaaw!";
-                    resultDiv.textContent = "Game over! No more rounds.";
-                    return;                                                    
-                }else if(round >= 5) {
-                    resultDiv.textContent = "Game over! No more rounds.";    
-                    finalScore.textContent = "You kost!!";
-                    return;                            
+                    if((humanScore == 5) && (humanScore > computerScore)){
+                        finalScore.textContent = "You win!";
+                        resultDiv.textContent = "Game over! No more rounds.";
+                        return;
+                    }else if((computerScore == 5) && (humanScore == computerScore)){
+                        finalScore.textContent = "Draaaaaw!";
+                        resultDiv.textContent = "Game over! No more rounds.";
+                        return;                                                    
+                    }else if(computerScore == 5) {
+                        resultDiv.textContent = "Game over! No more rounds.";    
+                        finalScore.textContent = "You kost!!";
+                        return;                            
+                    }
+    
+
                 }
     
-                });
 
         });
                     
