@@ -24,13 +24,12 @@
 
                         console.log(randomString);
 
+
                             if (button.id === randomString){
                                 console.log("It's a tie")
                                 console.log("You: ", humanScore)
                                 console.log("Computer: ", computerScore);
                                 resultDiv.textContent = "No point!";
-
-
                             } else if((button.id === 'ROCK' && randomString === 'SCISSOR') ||
                                     (button.id === 'PAPER' && randomString === 'ROCK') ||
                                     (button.id === 'SCISSOR' && randomString === 'PAPER')){
@@ -45,39 +44,40 @@
                                     (button.id === 'ROCK' && randomString === 'PAPER') ||
                                     (button.id === 'PAPER' && randomString === 'SCISSOR'))
                             {
-                                     computerScore++;
+                                computerScore++;
                                 console.log("You: ", humanScore)
                                 console.log("Computer: ", computerScore);
                                 console.log(`Round : ${round}`);  
                                 console.log("Computer's point!");
                                 resultDiv.textContent = "Computer's point!";
-
                             }
 
                             humanDiv.textContent = `${humanScore}`; 
                             computerDiv.textContent = `${computerScore}`;
 
-                        if((round >= 5) && (humanScore > computerScore)){
-                        finalScore.textContent = "You win!";
-                        resultDiv.textContent = "Game over! No more rounds.";
-                                    
-                        // resultElement.textContent = "Result: You win!";
-                    }else if((round >= 5) && (humanScore == computerScore)){
-                        finalScore.textContent = "Draaaaaw!";
-            resultDiv.textContent = "Game over! No more rounds.";
-                                            
-                }else if(round >= 5) {
-                    resultDiv.textContent = "Game over! No more rounds.";    
-                    finalScore.textContent = "You kost!!";
-
-                }
+                            if((round >= 5) && (humanScore > computerScore)){
+                           
+                                finalScore.textContent = "You win!";
+                                resultDiv.textContent = "Game over! No more rounds.";
+                                disableButtons();
+                            }else if((round >= 5) && (humanScore == computerScore)){
+                           
+                                finalScore.textContent = "Draaaaaw!";
+                                resultDiv.textContent = "Game over! No more rounds.";
+                                disableButtons();       
+                            }else if(round >= 5) {
+                                resultDiv.textContent = "Game over! No more rounds.";    
+                                finalScore.textContent = "You kost!!";
+                                disableButtons();
+                            }
                                     return;
-
-
                         });
 
-                        document.getElementById("human");
-
-
                     });
-                    console.log("hi!!! line 103")
+
+
+
+
+                    function disableButtons() {
+                    buttons.forEach(button => button.disabled = true);
+                    }
