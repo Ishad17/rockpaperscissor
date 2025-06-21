@@ -24,6 +24,12 @@
         
         }
 
+        .player{
+            flex-direction: row;
+            flex: 1;
+        }
+        
+
         #human{            
             background-color: rgb(23, 142, 74);
         }
@@ -43,8 +49,20 @@
         }
 
         .display{
-            flex-direction: column;
-            color: #0f0f;
+            display: flex;            
+            color: rgb(85, 222, 85);
+            text-align: center;
+
+        }
+
+        .output{
+            text-align: center;
+        }
+
+        .computer{
+            flex-direction: row;
+            flex: 1;
+
         }
 
         .desc{
@@ -73,15 +91,15 @@
 <body>
 
     <h2> Rock Paper Scissor</h2>
-    <div class="display" style="width: 50%; flex-direction: column; border: 2px solid rgb(147, 76, 107); align-content:center ;">
+    <div class="display" style="width: 50%; border: 2px solid rgb(147, 76, 107); align-content:center ;">
 
-        <div class="player" style=" border: 2px solid red;">        
+        <div class="player">        
         <div class="desc player">Player</div>
-        <div class="display player">ss</div>
+        <div class="output">ss</div>
         </div>
-        <div class="computer" style=" border: 2px solid red;">
+        <div class="computer">
             <div class="desc computer">Computer</div>
-            <div class="display computer">ss</div>
+            <div class="output">ss</div>
         </div>   
     </div>
 
