@@ -7,59 +7,128 @@
 
     <style>
         body{
-            background-color:rgb(10, 44, 25) ;
+            background-color:rgb(2, 48, 22) ;
         }
 
-        h2{color: antiquewhite;
-        font-weight: 800;}
-
-        .show{
-            background-color: rgb(190, 108, 108);
-            padding: 10px;
-            width: 100%;    
-        }
-
-        #computer{
-        background-color: rgb(190, 108, 108);
-        
-        }
-
-        #human{            
-            background-color: rgb(23, 142, 74);
-        }
-
-        #result{
-            background-color: antiquewhite;
-        } 
-
-        button{
-            margin: 10px;
-        }
-
-        .console{
-            color: rgb(255, 255, 255);
-            padding: 5px;
-            margin: 2px;
-        }
-
-        .desc{
-            padding: 5px;
-            width: 15%;  
-            min-width: 150px;   /* Minimum width */
-            max-width: 600px;   /* Maximum width */
+        h2{
             color: antiquewhite;
+            font-weight: 800;
+            font-size: 30px;
+            margin-left: 20px;
         }
 
         .container{
             display: flex;
+        }
+
+        .tableL{
+            flex: 1;
+            display: flex;
+            min-width: 300px;
+        }
+        
+        .desc{
+            color: antiquewhite;
+            padding: 10px;
+            margin: 2px;
+        }
+
+        .parent1{
+
+            flex: 1;
+        }
+
+        .parent2{
+            color:rgb(16, 36, 16);
+            flex: 2;
+            display: flex;
             flex-direction: column;
         }
 
-        .parent{
-            display: flex;
-            padding: 10px;
-            flex-direction: row;
+        .show{
+            background-color: rgb(5, 175, 118);
+            margin: 2px;
+            flex:1;
+            color: black;
+            padding: 8px;
         }
+
+        .tableR{
+            flex: 1;
+            display: flex;
+            color: aliceblue;
+            flex-direction: column;
+         }
+
+        .player{
+            flex:1;
+            display: flex;
+        }
+            
+        .computer{
+            flex:2;
+            display: flex;
+            margin: 0px 20px 20px 20px;
+            gap: 2px;
+            /* flex-direction: column; */
+        }
+
+        .tag{
+            flex:1;
+            align-content: center;
+            text-align: center;
+          }
+
+        .output{
+            flex: 1;
+            text-align: center;
+            align-content: center;
+            border: 2px solid rgb(237, 210, 210);
+            /* margin: 0px 20px 40px 20px; */
+            color: rgb(221, 167, 185);     
+        }
+
+
+        .btn3 {
+            padding: 10px;
+            width: 100px;
+            margin: 5px 20px 20px 70px;
+            background-color: #78afdc;
+            border-radius: 10px;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .btn3:hover {
+            transform: scale(1.5);
+        }
+
+                    @keyframes growIn {
+                0% {
+                    transform: scale(0.5);
+                    opacity: 0;
+                }
+                100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+
+            .btn3:disabled {
+                opacity: 0.5;           /* Make it look faded */
+                transform: none !important; /* Stop the hover grow effect when disabled */
+            }
+
+            #final {
+                padding: 20px;
+                align-content: center;
+                text-align: center;
+                font-size: x-large;
+                /* Animation Properties */
+                /* animation: growIn 0.4s ease forwards; */
+            }
 
     </style>    
     
@@ -68,48 +137,56 @@
 
     <h2> Rock Paper Scissor</h2>
 
-
-
        <!-- <button id="Click MEEE" onclick="alert('Hello World')">Click Me</button> -->
-
-        <button id="ROCK">ROCK</button>
-        <button id="PAPER">PAPER</button>
-        <button id="SCISSOR">SCISSOR</button>
+        
+        <button class="btn3" id="ROCK">ROCK</button>
+        <button class="btn3" id="PAPER">PAPER</button>
+        <button class="btn3" id="SCISSOR">SCISSOR</button>
 
     <div class="container">
 
-                <div class="parent">
-                <div class="desc">Status:</div>
-                <div class ="show" id="result"></div>
+        <div class="tableL">
+
+                <div class="parent1">
+                        <div class="desc">Status:</div>
+                        <div class="desc">Your score:</div>
+                        <div class="desc">Computer score:</div>
+                        <div class="desc">FINAL RESULT:</div>                        
+                </div>
+
+                <div class="parent2">
+                    <div class ="show" id="result"></div>
+                    <div class ="show" id="human"></div>
+                    <div class ="show" id="computer"></div>
+                    <div class="show" id="final"></div>
+                </div>
+                
         </div>
 
+        <div class="tableR">
 
-        <div class="parent">
-                <div class="desc">Your score:</div>
-                <div class ="show" id="human"></div>
+                <div class="player">        
+                                        <div class="tag">Player</div>
+                                        <div class="tag ">Computer</div>
+                </div>
+                <div class="computer">
+
+                                        <div class="output" id="pl"> </div>
+                                        <div class="output" id="pc"> </div>
+                </div>   
         </div>
-        <div class="parent">
-                <div class="desc">Computer score:</div>
-                <div class ="show" id="computer"></div>
+
         </div>
-        <div class="parent">
-                <div class="desc">Final Result: </div>
-                <div class="show" id="final" style="background-color:rgb(80, 127, 120)"></div>
-        </div>
-
-
-
     </div>
 
     <!-- <div id="round">Round: </div> -->
 
    
-    <div class="console"> ****  Check your browser console for complete result  **** </div>
+    <div class="console" style="padding: 20px; font-size:xx-large ;color: tomato;"> * The winning score is 5  </div>
 
 
 
 <script src="script.js" ></script>
-
 
 </body>
 </html>
