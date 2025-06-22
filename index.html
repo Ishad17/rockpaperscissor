@@ -16,20 +16,15 @@
             font-size: 30px;
             margin-left: 20px;
         }
-        button{
-            padding: 10px;
-            width: 100px;
-            margin: 5px 20px 20px 70px;
-        }
 
         .container{
             display: flex;
-            width: 75%;
         }
 
         .tableL{
             flex: 1;
             display: flex;
+            min-width: 300px;
         }
         
         .desc{
@@ -44,7 +39,7 @@
         }
 
         .parent2{
-                        color:darkseagreen;
+            color:rgb(16, 36, 16);
             flex: 2;
             display: flex;
             flex-direction: column;
@@ -61,44 +56,43 @@
         .tableR{
             flex: 1;
             display: flex;
-            /* background-color: wheat; */
-        }
+            color: aliceblue;
+            flex-direction: column;
+         }
 
         .player{
             flex:1;
-            /* background-color: cornflowerblue; */
-                    flex-direction: column;
             display: flex;
         }
-
+            
         .computer{
-            flex:1;
+            flex:2;
             display: flex;
-                        flex-direction: column;
+            margin: 0px 20px 20px 20px;
+            gap: 2px;
+            /* flex-direction: column; */
         }
 
         .tag{
             flex:1;
+            align-content: center;
             text-align: center;
-            
-        color: antiquewhite;
-        }
+          }
 
         .output{
+            flex: 1;
             text-align: center;
-            color: antiquewhite;     
-            flex:2;
-            padding: 10px;
-            margin: 1px 30px 60px 30px;
-            border: 2px wheat solid;
+            align-content: center;
+            border: 2px solid rgb(237, 210, 210);
+            /* margin: 0px 20px 40px 20px; */
+            color: rgb(221, 167, 185);     
         }
 
-        #final{
-            font-weight: 500;
-        }
 
         .btn3 {
-            padding: 10px 20px;
+            padding: 10px;
+            width: 100px;
+            margin: 5px 20px 20px 70px;
             background-color: #78afdc;
             border-radius: 10px;
             color: rgb(0, 0, 0);
@@ -110,6 +104,31 @@
         .btn3:hover {
             transform: scale(1.5);
         }
+
+                    @keyframes growIn {
+                0% {
+                    transform: scale(0.5);
+                    opacity: 0;
+                }
+                100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+
+            .btn3:disabled {
+                opacity: 0.5;           /* Make it look faded */
+                transform: none !important; /* Stop the hover grow effect when disabled */
+            }
+
+            #final {
+                padding: 20px;
+                align-content: center;
+                text-align: center;
+                font-size: x-large;
+                /* Animation Properties */
+                /* animation: growIn 0.4s ease forwards; */
+            }
 
     </style>    
     
@@ -148,11 +167,12 @@
 
                 <div class="player">        
                                         <div class="tag">Player</div>
-                                        <div class="output" id="pl"> </div>
+                                        <div class="tag ">Computer</div>
                 </div>
                 <div class="computer">
-                                        <div class="tag ">Computer</div>
-                                        <div class="output" id="pc"></div>
+
+                                        <div class="output" id="pl"> </div>
+                                        <div class="output" id="pc"> </div>
                 </div>   
         </div>
 
@@ -162,12 +182,11 @@
     <!-- <div id="round">Round: </div> -->
 
    
-    <div class="console" style="padding: 20px; font-size: larger ;color: tomato;"> * The winning score is 5  </div>
+    <div class="console" style="padding: 20px; font-size:xx-large ;color: tomato;"> * The winning score is 5  </div>
 
 
 
 <script src="script.js" ></script>
-
 
 </body>
 </html>

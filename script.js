@@ -49,11 +49,16 @@
                         humanDiv.textContent = `${humanScore}`; 
                         computerDiv.textContent = `${computerScore}`;
 
-                    if(humanScore == 5){
+                    if((humanScore == 5) && (humanScore > computerScore)){
                         finalScore.textContent = "You win!";
                         resultDiv.textContent = "Game over! No more rounds.";
                         disableButtons()
-                        return;                         
+                        return;
+                    }else if((computerScore == 5) && (humanScore == computerScore)){
+                        finalScore.textContent = "Draaaaaw!";
+                        resultDiv.textContent = "Game over! No more rounds.";
+                        disableButtons()
+                        return;                                                    
                     }else if(computerScore == 5) {
                         resultDiv.textContent = "Game over! No more rounds.";    
                         finalScore.textContent = "You Lost!!";
@@ -66,6 +71,7 @@
                // Disable buttons when game is over
                     function disableButtons() {
                         buttons.forEach(button => button.disabled = true);
+                        console.log("Buttons Disabled!")
                     } 
 
                     
